@@ -2,8 +2,11 @@
   "name": "amplify-secure-storage",
   "version": "0.0.1",
   "type": "module",
-  "dependencies": {
+  "devDependencies": {
     "tslib": "^2.3.0"
+  },
+  "peerDependencies": {
+    "aws-amplify": "^6.18.0"
   },
   "exports": {
     "./client": {
