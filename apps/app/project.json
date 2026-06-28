@@ -23,6 +23,13 @@
         "port": 4200,
         "spa": true
       }
+    },
+    "sandbox": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/app",
+        "command": "npx ampx sandbox --once"
+      }
     }
   }
 }

@@ -6,3 +6,5 @@ const backend = defineBackend({
   auth,
   storage,
 });
+
+console.log('testing', backend.storage.resources.quarantineBucket);

@@ -1,1 +1,1 @@
-export { amplifySecureStorage } from './secure-storage';
+export { defineSecureStorage } from './secure-storage';

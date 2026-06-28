@@ -1,3 +1,4 @@
+
 {
   "compileOnSave": false,
   "compilerOptions": {
@@ -12,7 +13,12 @@
     "module": "esnext",
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true
+    "skipDefaultLibCheck": true,
+    "paths": {
+      "amplify-secure-storage/backend": [
+        "./packages/amplify-secure-storage/src/backend/index.ts"
+      ]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

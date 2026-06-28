@@ -1,5 +1,5 @@
-import { defineStorage } from '@aws-amplify/backend';
+import { defineSecureStorage } from 'amplify-secure-storage/backend';
 
-export const storage = defineStorage({
+export const storage = defineSecureStorage({
   name: 'storage-bucket',
 });
