@@ -1,14 +1,18 @@
 {
   "name": "amplify-secure-storage",
   "version": "0.0.1",
-  "type": "commonjs",
-  "main": "./src/index.js",
-  "types": "./src/index.d.ts",
+  "type": "module",
   "dependencies": {
     "tslib": "^2.3.0"
   },
   "exports": {
-    "./client": "./src/client/index.ts",
-    "./backend": "./src/backend/index.ts"
+    "./client": {
+      "types": "./dist/client/index.d.ts",
+      "import": "./dist/client/index.js"
+    },
+    "./backend": {
+      "types": "./dist/backend/index.d.ts",
+      "import": "./dist/backend/index.js"
+    }
   }
 }

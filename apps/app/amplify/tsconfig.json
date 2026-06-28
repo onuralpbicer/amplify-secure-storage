@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "es2022",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true,
+    "paths": {
+      "$amplify/*": ["../.amplify/generated/*"],
+      "amplify-secure-storage/client": [
+        "../../../packages/amplify-secure-storage/src/client/index.ts"
+      ],
+      "amplify-secure-storage/backend": [
+        "../../../packages/amplify-secure-storage/src/backend/index.ts"
+      ]
+    }
+  }
+}

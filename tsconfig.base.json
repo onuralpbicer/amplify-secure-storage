@@ -12,12 +12,7 @@
     "module": "esnext",
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "paths": {
-      "amplify-secure-storage": [
-        "./packages/amplify-secure-storage/src/index.ts"
-      ]
-    }
+    "skipDefaultLibCheck": true
   },
   "exclude": ["node_modules", "tmp"]
 }

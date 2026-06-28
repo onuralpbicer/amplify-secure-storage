@@ -16,7 +16,8 @@
       "executor": "@nx/js:tsc",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/packages/amplify-secure-storage",
+        "rootDir": "packages/amplify-secure-storage/src",
+        "outputPath": "packages/amplify-secure-storage/dist",
         "main": "packages/amplify-secure-storage/src/index.ts",
         "tsConfig": "packages/amplify-secure-storage/tsconfig.lib.json",
         "assets": ["packages/amplify-secure-storage/*.md"]
