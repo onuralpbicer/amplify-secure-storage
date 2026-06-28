@@ -102,10 +102,19 @@ function allowOnlyWritablePermissions(accessDefinition: StorageAccessRecord) {
       .map(([path, permissions]) => [
         path,
         permissions
-          .map((p) => ({
-            ...p,
-            actions: p.actions.filter((a) => a === 'write'),
-          }))
+          .map((p) => {
+            // skip filtering for lambda/resource permissions
+            if (p.uniqueDefinitionIdValidations.length === 0) {
+              return {
+                ...p,
+                actions: [],
+              };
+            }
+            return {
+              ...p,
+              actions: p.actions.filter((a) => a === 'write'),
+            };
+          })
           .filter((p) => p.actions.length > 0),
       ])
       .filter(([, permissions]) => permissions.length > 0),
@@ -120,10 +129,16 @@ function allowOnlyNonWritablePermissions(
       .map(([path, permissions]) => [
         path,
         permissions
-          .map((p) => ({
-            ...p,
-            actions: p.actions.filter((a) => a !== 'write'),
-          }))
+          .map((p) => {
+            // skip filtering for lambda/resource permissions
+            if (p.uniqueDefinitionIdValidations.length === 0) {
+              return p;
+            }
+            return {
+              ...p,
+              actions: p.actions.filter((a) => a !== 'write'),
+            };
+          })
           .filter((p) => p.actions.length > 0),
       ])
       .filter(([, permissions]) => permissions.length > 0),
