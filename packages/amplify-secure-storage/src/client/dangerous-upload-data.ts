@@ -1,6 +1,9 @@
 import { Amplify } from 'aws-amplify';
 import type { StorageConfig } from '@aws-amplify/core';
-import { uploadData as originalUploadData, type UploadDataWithPathInput } from 'aws-amplify/storage';
+import {
+  uploadData as originalUploadData,
+  type UploadDataWithPathInput,
+} from 'aws-amplify/storage';
 
 interface BucketInfo {
   bucketName: string;
@@ -37,6 +40,7 @@ export function dangerousUploadData(input: UploadDataWithPathInput) {
     options: {
       ...input.options,
       bucket: dangerousBucket,
+      checksumAlgorithm: 'crc-32',
     },
   });
 }
