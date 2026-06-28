@@ -2,6 +2,7 @@ import { defineSecureStorage } from 'amplify-secure-storage/backend';
 
 export const storage = defineSecureStorage({
   name: 'storage-bucket',
+  isDefault: true,
   access: (allow) => ({
     'public/*': [
       allow.guest.to(['read']),

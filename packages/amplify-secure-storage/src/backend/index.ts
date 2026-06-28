@@ -1,1 +1,5 @@
-export { defineSecureStorage } from './secure-storage';
+export {
+  defineSecureStorage,
+  type SecureStorageProps,
+  type SecureStorageResources,
+} from './secure-storage';
