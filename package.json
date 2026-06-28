@@ -23,13 +23,15 @@
     "@angular/cli": "~21.2.0",
     "@angular/compiler-cli": "~21.2.0",
     "@angular/language-service": "~21.2.0",
+    "@aws-amplify/backend": "^1.23.0",
+    "@aws-amplify/backend-cli": "^1.8.3",
     "@eslint/js": "^9.8.0",
     "@nx/angular": "23.0.1",
     "@nx/angular-rspack": "23.0.1",
     "@nx/devkit": "23.0.1",
     "@nx/eslint": "23.0.1",
     "@nx/eslint-plugin": "23.0.1",
-    "@nx/js": "23.0.1",
+    "@nx/js": "^23.0.1",
     "@nx/playwright": "23.0.1",
     "@nx/rspack": "23.0.1",
     "@nx/vite": "23.0.1",
@@ -52,14 +54,19 @@
     "eslint-config-prettier": "^10.0.0",
     "eslint-plugin-playwright": "^1.6.2",
     "jsdom": "^27.1.0",
+    "jsonc-eslint-parser": "^2.1.0",
     "nx": "23.0.1",
     "prettier": "~3.6.2",
     "ts-node": "10.9.1",
     "tslib": "^2.3.0",
     "typescript": "~5.9.2",
     "typescript-eslint": "^8.40.0",
+    "verdaccio": "^6.3.2",
     "vite": "^8.0.0",
     "vitest": "~4.1.0",
     "webpack-merge": "^5.8.0"
+  },
+  "nx": {
+    "includedScripts": []
   }
 }
