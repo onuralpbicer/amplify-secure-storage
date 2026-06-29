@@ -1,6 +1,8 @@
 import { defineStorage as originalDefineStorage } from '@aws-amplify/backend';
 import {
   AmplifyStorageProps,
+  StorageAccessBuilder,
+  StorageAccessRecord,
   StorageResources,
 } from '@aws-amplify/backend-storage';
 import type {
@@ -11,10 +13,7 @@ import type {
 import { storageOutputKey } from '@aws-amplify/backend-output-schemas';
 import * as s3 from 'aws-cdk-lib/aws-s3';
 import { Tags } from 'aws-cdk-lib';
-import {
-  StorageAccessBuilder,
-  StorageAccessRecord,
-} from '@aws-amplify/backend-storage/lib/types';
+import { GuartDutyScanning } from './guard-duty';
 
 export type SecureStorageProps = Omit<
   AmplifyStorageProps,
@@ -65,6 +64,15 @@ export function defineSecureStorage(
 
       const quarantineBucket =
         quarantineFactory.getInstance(context).resources.bucket;
+
+      new GuartDutyScanning(
+        storageInstance.stack,
+        `GuardDutyScan-${storageInstance.resources.bucket.node.id}`,
+        {
+          quarantineBucket,
+          cleanBucket,
+        },
+      );
 
       Tags.of(cleanBucket).add(
         'quarantine-bucket',
